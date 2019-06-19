@@ -43,20 +43,22 @@ class Login extends CI_Controller {
 	public function ceklogin(){
 		$user=$this->input->post('usname');
 		$pass=$this->input->post('pass');
+		$status = "Aktif";
 		$where = array
 		(
    			'username' => $user,
-   			'password' => md5($pass)
+   			'password' => md5($pass),
+   			'Status'   => $status
    		);
 		$cekkandidat = $this->Datalogin_model->cekloginkandidat('kandidat',$where)->num_rows();
 		$cekperusahaan = $this->Datalogin_model->cekloginperusahaan('perusahaan',$where)->num_rows();
 		$cekadmin = $this->Datalogin_model->cekloginadmin('admin',$where)->num_rows();
-		if($cekkandidat > 0)
+		if($cekkandidat > 0 )
 		{
 	  		$result=$this->db->get_where('kandidat',$where)->row_array();
 		    $data_session = array
 		    (
-		    	'id_kandidat'=>$result['id_kandidat'],
+		    'id_kandidat'=>$result['id_kandidat'],
 		    'nama' => $result['nama'],
 		    'status' => "login",
 		    'role' => "kandidat"

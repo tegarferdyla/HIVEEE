@@ -4,6 +4,7 @@
 				<div class="page-caption">
 					<div class="col-md-6">
 						<h2>Create Job</h2>
+						<p><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Create Job</p>
 						<hr>
 					</div>
 
@@ -23,14 +24,14 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="" class="">Job Title</label>
-							<input type="text" name="judul" class="form-control"> 
+							<input type="text" name="judul" class="form-control" required> 
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Category</label><br>
-							<select name="kategori" id="" class="form-control" >
+							<select name="kategori" id="" class="wide form-control" >
 								<option value=""class="active">Select Category</option>
 								<option value="Akutansi & Keuangan">Akutansi & Keuangan</option>
 								<option value="Administrasi">Administrasi</option>

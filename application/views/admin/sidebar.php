@@ -60,7 +60,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#job" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-title">Master Job Application</span>
               <i class="menu-arrow"></i>
@@ -73,7 +73,7 @@
                 <li class="nav-item"> <a class="nav-link" href="<?php echo site_url('Admin/lamarantolak')?>">Cancel Applicant</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Admin/report')?>">
               <span class="menu-title">Report</span>

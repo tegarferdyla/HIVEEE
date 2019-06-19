@@ -16,7 +16,7 @@
 				  			<div class="alert-group">
 					  			<div class="alert alert-danger alert-dismissable">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-									<strong>Warning!</strong>  Username atau Password Salah !!
+									<strong>Warning!</strong> <br> Username atau Password Salah atau Akun Anda sudah di NonAktifkan!! 
 								</div>
 				  			</div>
 				  		</div>

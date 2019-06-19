@@ -332,7 +332,7 @@
 
       var trafficChartData = {
         datasets: [{
-          data: [30, 30, 40],
+          data: [80, 10, 10],
           backgroundColor: [
             gradientStrokeBlue,
             gradientStrokeGreen,
@@ -357,11 +357,12 @@
     
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
-          'Search Engines',
+          'Engines',
           'Direct Click',
           'Bookmarks Click',
         ]
       };
+
       var trafficChartOptions = {
         responsive: true,
         animation: {
@@ -401,4 +402,5 @@
       });
     }
   });
+
 })(jQuery);

@@ -19,11 +19,19 @@ class Admin extends CI_Controller {
 		$data['jmlkan']=$this->Datakandidat_model->Jumlahkandidat();
 		$data['perusahaan']=$this->Dataperusahaan_model->Jumlahperusahaan();
 		$data['lowongan']=$this->Datalowongan_model->Jumlahlowongan();
+		//Perusahaan
+		$data['perusahaanaktif']=$this->Dataperusahaan_model->Jumlahperusahaan();
+		$data['perusahaannonaktif']=$this->Dataperusahaan_model->Jumlahperusahaannonaktif();
+		//Kandidat
+		$data['kandidataktif']=$this->Datakandidat_model->Jumlahkandidat();
+		$data['kandidatnonaktif']=$this->Datakandidat_model->Jumlahnonaktif();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/dashboard',$data);
 		$this->load->view('admin/footer');
 	}
+
+	// START Cetak Laporan
 	public function cekdetail($id_kandidat){
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
@@ -54,6 +62,13 @@ class Admin extends CI_Controller {
 		$data['nonactive'] = $this->Dataperusahaan_model->perusahaannonaktif();
 		$this->load->view('admin/cetakperusahaannonaktiv',$data);
 	}
+	public function cetaklowonganaktive(){
+		$data['active'] = $this->Datalowongan_model->lowonganaktif();
+		$this->load->view('admin/cetaklowonganaktiv',$data);
+	}
+
+	// END Cetak Laporan
+
 	public function kandidataktif(){
 		$this->load->view('admin/header');
 		$data['active'] = $this->Datakandidat_model->kandidataktif();

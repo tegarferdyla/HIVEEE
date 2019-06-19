@@ -53,7 +53,7 @@
 				<div class="tab-content">
 					<div class="row">
 					<div class="col-sm-5">
-						<h4>98 Jobs & Vacancies</h4>
+						<h4>Jobs & Vacancies</h4>
 					</div>
 					<div class="col-sm-7">
 						
@@ -108,7 +108,7 @@
 							</div>
 							<?php } ?>
 							<!-- Single Job 2 -->
-							<div class="flexbox padd-10">
+							<!-- <div class="flexbox padd-10">
 						<ul class="pagination">
 							<li class="page-item">
 							  <a class="page-link" href="manage-job.html#" aria-label="Previous">
@@ -126,7 +126,7 @@
 							  </a>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 
 						</div>
 					</div>

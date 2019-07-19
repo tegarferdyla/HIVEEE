@@ -26,6 +26,10 @@
   
   <script src=<?php echo base_url('https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js')?>></script>
   <script src=<?php echo base_url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')?>></script>
+
+  <script src=" <?php echo base_url('https://code.jquery.com/jquery-3.3.1.js') ?>"></script>
+  <script src="<?php echo base_url('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js') ?>"></script>
+  <script src="<?php echo base_url('https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js') ?>"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
@@ -36,7 +40,7 @@
   <!-- Custom js for this page-->
   <script src="<?php echo base_url('assets/js/dashboard.js')?>"></script>
   <!-- End custom js for this page-->
-  <script>
+<!--   <script>
   $(function () {
     $('#datatable').DataTable({
       'paging': true,
@@ -54,7 +58,7 @@
       return false;
   }
 
-</script>
+</script> -->
 </body>
 
 </html>

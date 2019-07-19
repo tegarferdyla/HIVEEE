@@ -14,9 +14,11 @@
 		<!-- ======================= End Page Title ===================== -->
 <section class="">
 	<div class="container">
+	<div class="row">
+		<div class="col-md-6">
 		<div class="detail-wrapper" style = "border-color: #ff7c39">
 			<div class="detail-wrapper-header" style = "border-color: #ff7c39">
-				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> General Information</h4>
+				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Informasi Pekerjaan</h4>
 			</div>
 			<div class="detail-wrapper-body">
 				<form action="<?php echo base_url('Perusahaan/TambahLowongan')?>" method="POST" class="log-form warnaorange" id="defaultForm">
@@ -30,8 +32,8 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<label for="">Category</label><br>
-							<select name="kategori" id="" class="wide form-control" >
+							<label for="">Category Job</label><br>
+							<select name="kategori" id="" class="wide form-control" required>
 								<option value=""class="active">Select Category</option>
 								<option value="Akutansi & Keuangan">Akutansi & Keuangan</option>
 								<option value="Administrasi">Administrasi</option>
@@ -39,7 +41,7 @@
 								<option value="Retail Staff">Retail Staff</option>
 								<option value="Design">Design</option>
 								<option value="Event Staff">Event Staff</option>
-								<option value="Restaurant & Food Staff">Restaurant & Food Staff</option>
+								<option value="Food & Beverage">Food & Beverage</option>
 								<option value="Developer">Developer</option>
 							</select>
 						</div>
@@ -47,7 +49,7 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<label for="">Position</label>
+							<label for="">Position Level </label>
 							<input type="text" name="posisi" class="form-control">
 						</div>
 					</div>
@@ -100,5 +102,14 @@
 				</form>
 			</div>
 		</div>
+		</div>
+		<div class="col-md-6">
+		<div  class="detail-wrapper" style = "border-color: #ff7c39">
+			<div class="detail-wrapper-header" style = "border-color: #ff7c39">
+				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Persyaratan Pekerjaan</h4>
+			</div>
+		</div>
+		</div>
+	</div>	
 	</div>
 </section>

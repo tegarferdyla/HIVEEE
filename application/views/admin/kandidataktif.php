@@ -26,7 +26,7 @@
                   <p class="card-description">
                     Menampilkan daftar kandidat yang telah terdaftar dan berstatus aktif.
                   </p>
-                  <table class="table table-striped table-bordered">
+                  <table id="example" class="table table-striped table-bordered">
                     <thead>
                       <tr class ="text-center">
                         <th>No</th>
@@ -59,4 +59,8 @@
               </div>
             </div>
          </div>   
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>

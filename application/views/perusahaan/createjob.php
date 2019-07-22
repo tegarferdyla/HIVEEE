@@ -15,7 +15,7 @@
 <section class="">
 	<div class="container">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 		<div class="detail-wrapper" style = "border-color: #ff7c39">
 			<div class="detail-wrapper-header" style = "border-color: #ff7c39">
 				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Informasi Pekerjaan</h4>
@@ -57,7 +57,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Salary</label>
-							<input type="" name="gaji" class="form-control number">
+							<input type="" name="gaji" class="form-control number uang">
 						</div>
 					</div>
 
@@ -82,14 +82,14 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Description</label>
-							<textarea name="deskripsi" id="" class="form-control " cols="30" rows="10" style="resize:none;"></textarea>
+							<textarea name="deskripsi" id="" class="form-control texteditor"  cols="30" rows="10" style="resize:none;"></textarea>
 						</div>
 					</div>
 					
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Reqruitments</label>
-							<textarea name="syarat" id="" class="form-control " cols="30" rows="10" style="resize:none;"></textarea>
+							<textarea name="syarat" id="" class="form-control" cols="30" rows="10" style="resize:none;"></textarea>
 						</div>	
 					</div>
 					<div class="row">
@@ -103,13 +103,7 @@
 			</div>
 		</div>
 		</div>
-		<div class="col-md-6">
-		<div  class="detail-wrapper" style = "border-color: #ff7c39">
-			<div class="detail-wrapper-header" style = "border-color: #ff7c39">
-				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Persyaratan Pekerjaan</h4>
-			</div>
-		</div>
-		</div>
+		
 	</div>	
 	</div>
 </section>

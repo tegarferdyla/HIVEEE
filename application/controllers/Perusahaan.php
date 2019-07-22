@@ -98,6 +98,7 @@ class Perusahaan extends CI_Controller {
 			'id_perusahaan'=>$this->session->userdata('id_perusahaan')
 		);
 		$this->Datalowongan_model->TambahLowongan('lowongan',$data);
+		$this->session->set_flashdata('berhasil','true');
 		redirect(base_url('Perusahaan'));
 	}
 	public function ubahlamaran($id_kandidat,$id_lowongan)

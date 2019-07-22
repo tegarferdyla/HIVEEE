@@ -40,10 +40,9 @@
 				<div role="tabpanel" class="tab-pane fade in active" id="aktif">
 					<?php foreach ($la as $l ) {?>	
 					<div class="col-md-4 col-sm-8">
-						
-								<div class="grid-job-widget">	
-															
+								<div class="grid-job-widget">				
 									<div class="u-content">
+									
 										<div class="avatar box-80">
 											<a href="#">
 												<img class="img-responsive" src="<?php echo base_url('assets/img/company.png') ?>" alt="">
@@ -57,9 +56,17 @@
 									</div>
 									
 									<div class="job-type-grid">
-										<a href="<?php echo base_url("perusahaan/manageresume/$l->id_lowongan") ?>" class="btn theme-btn">Manage Resume<span class="ti-angle-right"></span></a>
-									</div>	
-
+										<a href="<?php echo base_url("perusahaan/manageresume/$l->id_lowongan") ?>" class="btn theme-btn">Manage Resume<span class="ti-angle-right"></span></a><br>
+									</div>
+									<hr>
+									<div class="row">
+									<div class="col-md-6">
+									<a href="#" class="cl-success mrg-5"><i class="fa fa-edit"></i> Edit Jobs</span></a>
+									</div>
+									<div class="col-md-6">
+									<a href="#" class="cl-danger mrg-5"><i class="fa fa-trash "></i> Non-Aktif Jobs</span></a>
+									</div>
+									</div>
 								</div>
 								
 							</div>

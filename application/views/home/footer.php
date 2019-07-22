@@ -76,6 +76,15 @@
 		<!-- =================== START JAVASCRIPT ================== -->
 		<!-- Jquery js-->
 		<script src=" <?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+		<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+
+    	// Format mata uang.
+    	$( '.uang' ).mask('0.000.000.000', {reverse: true});
+
+		})
+		</script>
 		
 		<!-- Bootstrap js-->
 		<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js') ?> "></script>

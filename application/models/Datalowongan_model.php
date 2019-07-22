@@ -12,6 +12,7 @@ class Datalowongan_model extends CI_Model {
 			$this->db->from('lowongan');
 			$this->db->join('perusahaan','perusahaan.id_perusahaan=lowongan.id_perusahaan');
 			$this->db->where('status_low','Aktif');
+			$this->db->order_by('id_lowongan', "desc");
 			$query = $this->db->get();
 
 			return $query->result();
@@ -31,6 +32,7 @@ class Datalowongan_model extends CI_Model {
 			$this->db->join('perusahaan','perusahaan.id_perusahaan=lowongan.id_perusahaan');
 			$this->db->where('lowongan.id_perusahaan',$id_perusahaan);
 			$this->db->where('status_low','Aktif');
+			$this->db->order_by('id_lowongan', "desc");
 			$query = $this->db->get();
 
 			return $query->result();

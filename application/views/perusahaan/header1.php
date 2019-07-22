@@ -44,6 +44,10 @@
     <!-- Custom style -->
     <link href="<?php echo base_url('assets/css/style.css') ?> " rel="stylesheet">
 	<link href="<?php echo base_url('assets/css/responsiveness.css') ?> " rel="stylesheet">
+
+	<!-- TinyMCE -->
+  	<script src="<?= base_url('assets/plugins/tinymce/tinymce.min.js') ?>"></script>
+  	<script>tinymce.init({ selector:'textarea'});</script>
 	
 	<!-- Custom Color -->
     <link href="<?php echo base_url('assets/css/skin/default.css') ?> " rel="stylesheet">

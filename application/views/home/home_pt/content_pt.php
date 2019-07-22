@@ -1,6 +1,17 @@
 <!-- ======================= Start Banner ===================== -->
 		<div class="main-banner" style="background-image:url(assets/img/slider-1.jpg);">
 			<div class="container">
+				<div class="row">
+		 <?php if ($this->session->flashdata('berhasil')):?>
+		<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
+		<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<strong>Well done!</strong> Lowongan anda berhasil dibuat , lowongan akan di tampilkan di sisi kandidat.
+		</div>
+		</div>
+		<?php endif ?>
+		
+		</div>
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 				
 					<div class="caption text-center cl-white">

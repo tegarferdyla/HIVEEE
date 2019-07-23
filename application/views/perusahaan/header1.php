@@ -105,7 +105,11 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown sign-up">
 							<a class="dropdown-toggle btn-signup red-btn" data-toggle="dropdown" href="">
+								<?php if (empty($p->logo)) :?>
+									<img src="<?php echo base_url('assets/img/company.png') ?>" class="img-responsive img-circle" alt=""> <?php echo strtoupper($p->nm_perusahaan); ?>
+								<?php elseif(!empty($p->logo)) : ?>
 								<img src="<?php echo base_url('assets/img/'.$p->logo) ?>" class="img-responsive img-circle" alt=""> <?php echo strtoupper($p->nm_perusahaan); ?>
+								<?php endif ?>
 							</a>
 							<ul class="dropdown-menu animated fadeOutUp">
 								<li><a href="<?php echo site_url ('perusahaan/editcompany') ?>">Edit profile</a></li>

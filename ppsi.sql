@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2019 at 04:38 AM
+-- Generation Time: Jul 23, 2019 at 05:35 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `Status`) VALUES
-('AD0001', 'Admin', 'df70d98996977a7b6f8dcf37c3265a38', 'Tegar Ferdyla', 'Aktif');
+('AD0001', 'Admin', 'df70d98996977a7b6f8dcf37c3265a38', 'Admin Hivee', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ INSERT INTO `kandidat` (`id_kandidat`, `nama`, `alamat`, `username`, `password`,
 ('KN0004', 'Adul Adul', 'Jl.Daan Mogot', 'tisaf', 'df70d98996977a7b6f8dcf37c3265a38', '0797987', 'antoema324@gmail.com', '', '2018-06-22', '', '1. ABANAJGAUSGUGAS\r\n2. KHAKSHASJAJKSJA\r\n3. ASAGSGAUGUGA', 'SD', '', '', 0, 0, 'Aktif', '', ''),
 ('KN0005', 'Dian Noviyanti', 'Jl. Praja Dalam F', 'diannovia', 'ea8cfc69b2007f338af5c24dca05be8e', '089637417255', 'diannovvia19@gmail.c', '1432394246728.jpg', '1997-11-19', '', 'Saya Rajin Membantu', 'SMA/SMK', 'SMA Muhammadiyah 18', 'Lainnya', 2012, 2015, 'Aktif', '', ''),
 ('KN0006', 'Tegar Ferdyla', 'Komplek DKI Joglo', 'tegarferdyla', 'df70d98996977a7b6f8dcf37c3265a38', '089637632173', 'tegarferdyla@gmail.com', 'IMG_20180323_062504_8621.jpg', '1997-07-23', 'Pria', 'Saya Baik', 'S1', 'Mercu Buana University', 'Ilmu Komputer/Teknologi Inform', 2015, 2019, 'Aktif', 'jusibi.docx', ''),
-('KN0007', 'rikky aja', 'Jl. Kebon Sirih Raya N0 8 A', 'rikkyaja', '25d55ad283aa400af464c76d713c07ad', '081808007738', 'rikaja@gmail.com', '', '2018-06-30', 'Pria', 'kepo anjing', 'SMA/SMK', 'SMK YADIKA 4', 'Lainnya', 2013, 2015, 'NonAktif', '', 'juara 3 lomba balap karung');
+('KN0007', 'rikky aja', 'Jl. Kebon Sirih Raya N0 8 A', 'rikkyaja', 'df70d98996977a7b6f8dcf37c3265a38', '081808007738', 'rikaja@gmail.com', '', '2018-06-30', 'Pria', 'kepo anjing', 'SMA/SMK', 'SMK YADIKA 4', 'Lainnya', 2013, 2015, 'NonAktif', '', 'juara 3 lomba balap karung');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,8 @@ CREATE TABLE `lamaran` (
 INSERT INTO `lamaran` (`id_lamaran`, `id_perusahaan`, `id_kandidat`, `id_lowongan`, `tgl_daftar`, `status`) VALUES
 ('LM0001', 'PT0002', 'KN0004', 'LW0002', '2019-01-06', 'Direview'),
 ('LM0002', 'PT0002', 'KN0006', 'LW0002', '2019-05-09', 'Direview'),
-('LM0003', 'PT0005', 'KN0006', 'LW0003', '2019-06-12', 'Direview');
+('LM0003', 'PT0005', 'KN0006', 'LW0003', '2019-06-12', 'Direview'),
+('LM0004', 'PT0005', 'KN0006', 'LW0007', '2019-07-22', 'Diterima');
 
 -- --------------------------------------------------------
 
@@ -134,8 +135,12 @@ CREATE TABLE `lowongan` (
 --
 
 INSERT INTO `lowongan` (`id_lowongan`, `nama_lowongan`, `kategori`, `tgl_post`, `bataspendaftaran`, `gaji`, `lokasi`, `posisi`, `deskripsi`, `syarat`, `status_low`, `id_perusahaan`) VALUES
-('LW0002', 'Koki', 'Food', '2018-05-01', '2018-05-09', 250000, '', '', '', '', 'Aktif', 'PT0002'),
-('LW0003', 'Sales', '', '2019-06-06', '2019-06-07', 0, '', 'sales', 'sales', 'sales', 'Aktif', 'PT0005');
+('LW0002', 'Koki', 'Food', '2018-05-01', '2018-05-09', 250000, 'Jakarta', '', '', '', 'Aktif', 'PT0002'),
+('LW0003', 'Sales', 'Event', '2019-06-06', '2019-06-07', 50000, 'Jakarta', 'sales', 'sales', 'sales', 'Aktif', 'PT0005'),
+('LW0004', 'Programmer', 'Developer', '2019-06-19', '2019-06-21', 80000, 'Jakarta', 'Programmer', 'Pekerjaan Sebagai Programmer', '', 'Aktif', 'PT0005'),
+('LW0005', 'SPG & SPB', '', '2019-06-19', '2019-06-22', 80000, 'Bandung', 'SPG & SPB', 'Sebagai Sales Minyak', '', 'Aktif', 'PT0005'),
+('LW0006', 'Design Baju', 'Design', '2019-06-19', '2019-06-23', 70000, 'Jakarta', 'Designer', 'Design Baju Logo', 'Bisa Photoshop', 'Aktif', 'PT0005'),
+('LW0007', 'Programmer', '', '2019-07-22', '2019-07-24', 80000, 'Jakarta', 'Programmer', '<p><strong>Programer</strong></p>\r\n<p><strong>1. Sarat</strong></p>', '<p>Bisa ga&nbsp;<em>asdasd</em></p>\r\n<p><em>- Jual</em></p>', 'Aktif', 'PT0005');
 
 -- --------------------------------------------------------
 
@@ -204,9 +209,9 @@ CREATE TABLE `perusahaan` (
 --
 
 INSERT INTO `perusahaan` (`id_perusahaan`, `nm_perusahaan`, `alamat_perusahaan`, `logo`, `deskripsi_perusahaan`, `username`, `password`, `telp`, `email`, `website`, `Status`) VALUES
-('PT0002', 'PT.Minning', 'Jl.Gajah Mada', '', '', 'Anto123', '1c079586e87b16e492af80e7679e7e9d', '089632309715', 'antoema32@gmail.com', '', 'Aktif'),
+('PT0002', 'PT.Minning', 'Jl.Gajah Mada', 'company.png', '', 'Anto123', '1c079586e87b16e492af80e7679e7e9d', '089632309715', 'antoema32@gmail.com', '', 'Aktif'),
 ('PT0004', 'PT.Antam', 'Jl.Ketapang', '', '', 'Antam', '115f1808d2152bb1c749497c81cbc454', '08513123112312', 'help@ketapang.org', '', 'NonAktif'),
-('PT0005', 'PT.PGN', 'Jl.Ketapang No 1', 'default.png', '', 'pgn', 'df70d98996977a7b6f8dcf37c3265a38', '089098098098', 'info@pgn.com', '', 'NonAktif');
+('PT0005', 'PT.PGN', 'Jl.Ketapang No 1', 'company.png', '', 'pgn', 'df70d98996977a7b6f8dcf37c3265a38', '089098098098', 'info@pgn.com', 'www.pgn.com', 'Aktif');
 
 -- --------------------------------------------------------
 

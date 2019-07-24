@@ -78,28 +78,39 @@ class Perusahaan extends CI_Controller {
 		$kategori=$_POST['kategori'];
 		$posisi=$_POST['posisi'];
 		$gaji=$_POST['gaji'];
+		$average = $_POST['average'];
 		$lokasi=$_POST['lokasi'];
 		$sd=date('Y-m-d',strtotime($_POST['startdate']));
 		$ed=date('Y-m-d',strtotime($_POST['enddate']));
 		$des=$_POST['deskripsi'];
 		$req=$_POST['syarat'];
 		$data=array(
-			'id_lowongan'=>$this->Penomoran_model->IDLowongan(),
-			'nama_lowongan'=>$judul,
-			'kategori'=>$kategori,
-			'lokasi'=>$lokasi,
-			'gaji'=>$gaji,
-			'posisi'=>$posisi,
-			'tgl_post'=>$sd,
-			'bataspendaftaran'=>$ed,
-			'deskripsi'=>$des,
-			'syarat'=>$req,
-			'status_low'=>'Aktif',
-			'id_perusahaan'=>$this->session->userdata('id_perusahaan')
+			'id_lowongan'		=>$this->Penomoran_model->IDLowongan(),
+			'nama_lowongan'		=>$judul,
+			'kategori'			=>$kategori,
+			'lokasi'			=>$lokasi,
+			'gaji'				=>$gaji,
+			'average' 			=> $average,
+			'posisi'			=>$posisi,
+			'tgl_post'			=>$sd,
+			'bataspendaftaran'	=>$ed,
+			'deskripsi'			=>$des,
+			'syarat'			=>$req,
+			'status_low'		=>'Aktif',
+			'id_perusahaan'		=>$this->session->userdata('id_perusahaan')
 		);
 		$this->Datalowongan_model->TambahLowongan('lowongan',$data);
 		$this->session->set_flashdata('berhasil','true');
 		redirect(base_url('Perusahaan'));
+	}
+	public function editlowongan($id_lowongan)
+	{
+		$id_perusahaan=$this->session->userdata('id_perusahaan');
+		$data['perusahaan']=$this->Dataperusahaan_model->profilperusahaan($id_perusahaan);
+		$data['lowongan'] =$this->Datalowongan_model->lowonganwhere($id_lowongan);
+		$this->load->view('perusahaan/header1',$data);
+		$this->load->view('perusahaan/editjob',$data);
+		$this->load->view('home/footer');
 	}
 	public function ubahlamaran($id_kandidat,$id_lowongan)
 	{
@@ -222,6 +233,52 @@ class Perusahaan extends CI_Controller {
    		 $this->Dataperusahaan_model->ubahprofile($data,$where);
    		 redirect(base_url('Perusahaan'));
         }
+	}
+
+	public function updatelowongan()
+	{
+			$id_lowongan=$_POST['id_lowongan'];
+			$judul		=$_POST['judul'];
+			$kategori	=$_POST['kategori'];
+			$posisi		=$_POST['posisi'];
+			$gaji		=$_POST['gaji'];
+			$average	=$_POST['average'];
+			$lokasi		=$_POST['lokasi'];
+			$sd 		=date('Y-m-d',strtotime($_POST['startdate']));
+			$ed 		=date('Y-m-d',strtotime($_POST['enddate']));
+			$des 		=$_POST['deskripsi'];
+			$req 		=$_POST['syarat'];
+			$data_update = array (
+				'id_lowongan'=>$id_lowongan,
+				'nama_lowongan'=>$judul,
+				'kategori'=>$kategori,
+				'lokasi'=>$lokasi,
+				'gaji'=>$gaji,
+				'average' => $average,
+				'posisi'=>$posisi,
+				'tgl_post'=>$sd,
+				'bataspendaftaran'=>$ed,
+				'deskripsi'=>$des,
+				'syarat'=>$req,
+				'status_low'=>'Aktif',
+				'id_perusahaan'=>$this->session->userdata('id_perusahaan')
+			);
+			$result = $this->Datalowongan_model->updatelowongan($data_update, $id_lowongan);
+			if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil','true');
+				redirect('perusahaan/manage');
+			}
+			else {
+				$this->session->set_flashdata('updategagal','true');
+				redirect('perusahaan/manage');
+			}
+	}
+	public function test()
+	{
+		$average	=$_POST['average'];
+		$kategori	=$_POST['kategori'];
+
+		echo "$average";
 	}
 }
 ?>

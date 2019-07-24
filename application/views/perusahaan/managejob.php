@@ -26,9 +26,20 @@
 				</ul>
 			</div>
 		</div>
+	</div>
 	</div>	
-</section>	
+</section>
 <div class="container">
+	<?php if ($this->session->flashdata('updateberhasil')):?>
+	<div class="row">
+	<div class="col-md-12">
+		<div class="alert alert-info alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<strong>Well done!</strong> Lowongan anda berhasil di update , harap cek manage resume secara berkala.
+		</div>
+	</div>
+	</div>
+	<?php endif ?>
 	<div class="col-md-12 dol-md-12">
 		<div class="tab style-1" role="tabpanel">
 			<ul class="nav nav-tabs" role="tablist">
@@ -51,8 +62,8 @@
 										<h5><a href="#"><?php echo $l->nama_lowongan; ?></a></h5>
 										<p class=""><?php echo $l->tgl_post." - ".$l->bataspendaftaran;?></p>
 										<p class="text-muted"><span class="ti-location-pin"></span> 
-											<?php echo $l->alamat_perusahaan; ?></p>
-										<p class="text-muted" style="color:green"><span class="ti-money"></span><?php echo $l->gaji; ?></p>
+											<?php echo $l->lokasi; ?></p>
+										<p class="text-muted" style="color:green"><span class="ti-money"></span><?php echo $l->gaji; ?> / <?php echo $l->average; ?></p>
 									</div>
 									
 									<div class="job-type-grid">
@@ -61,7 +72,7 @@
 									<hr>
 									<div class="row">
 									<div class="col-md-6">
-									<a href="#" class="cl-success mrg-5"><i class="fa fa-edit"></i> Edit Jobs</span></a>
+									<a href="<?php echo base_url("perusahaan/editlowongan/$l->id_lowongan") ?>" class="cl-success mrg-5"><i class="fa fa-edit"></i> Edit Jobs</span></a>
 									</div>
 									<div class="col-md-6">
 									<a href="#" class="cl-danger mrg-5"><i class="fa fa-trash "></i> Non-Aktif Jobs</span></a>
@@ -89,8 +100,8 @@
 										<h5><a href="#"><?php echo $x->nama_lowongan; ?></a></h5>
 										<p class=""><?php echo $x->tgl_post." - ".$x->bataspendaftaran;?></p>
 										<p class="text-muted"><span class="ti-location-pin"></span> 
-											<?php echo $x->alamat_perusahaan; ?></p>
-										<p class="text-muted" style="color:green"><span class="ti-money"></span><?php echo $x->gaji; ?></p>
+											<?php echo $x->lokasi; ?></p>
+										<p class="text-muted" style="color:green"><span class="ti-money"></span><?php echo $x->gaji; ?> / <?php echo $x->average; ?> </p>
 									</div>
 									<div class="job-type-grid">
 										<a href="<?php echo base_url("perusahaan/manageresume/$x->id_lowongan") ?>" class="btn theme-btn">Manage Resume<span class="ti-angle-right"></span></a>

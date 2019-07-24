@@ -3,8 +3,8 @@
 			<div class="container">
 				<div class="page-caption">
 					<div class="col-md-6">
-						<h2>Create Job</h2>
-						<p><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Create Job</p>
+						<h2>Edit Job</h2>
+						<p><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Edit Job</p>
 						<hr>
 					</div>
 
@@ -12,6 +12,7 @@
 			</div>
 		</div>
 		<!-- ======================= End Page Title ===================== -->
+<?php foreach ($lowongan as $u) { ?>
 <section class="">
 	<div class="container">
 	<div class="row">
@@ -21,12 +22,12 @@
 				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Informasi Pekerjaan</h4>
 			</div>
 			<div class="detail-wrapper-body">
-				<form action="<?php echo base_url('Perusahaan/TambahLowongan')?>" method="POST" class="log-form warnaorange" id="defaultForm">
-					
+				<form action="<?php echo base_url('Perusahaan/test')?>" method="POST" class="log-form warnaorange" id="defaultForm">
+					<input type="text" name="id_lowongan" value="<?php echo $u->id_lowongan ?>" hidden>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="" class="">Job Title</label>
-							<input type="text" name="judul" class="form-control" required> 
+							<input type="text" name="judul" class="form-control" value="<?php echo $u->nama_lowongan;?>" required> 
 						</div>
 					</div>
 
@@ -34,6 +35,7 @@
 						<div class="col-md-12">
 							<label for="">Category Job</label><br>
 							<select name="kategori" id="" class="wide form-control" required>
+								<option value ="<?php echo $u->kategori; ?>"><?php echo "$u->kategori"; ?></option>
 								<option value=""class="active">Select Category</option>
 								<option value="Akutansi & Keuangan">Akutansi & Keuangan</option>
 								<option value="Administrasi">Administrasi</option>
@@ -50,22 +52,23 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Position Level </label>
-							<input type="text" name="posisi" class="form-control" required>
+							<input type="text" name="posisi"  value="<?php echo $u->posisi; ?>" class="form-control">
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-6">
-							<label for="">Salary </label>
-							<input type="number" name="gaji" class="form-control number" required>
+							<label for="">Salary</label>
+							<input type="number" name="gaji" value="<?php echo $u->gaji; ?>" class="form-control number" required>
 						</div>
 						<div class="col-md-6">
 							<label for="">/ Hours / Day / Month</label>
 							<select name="average" id="" class="wide form-control" required>
-								<option value=""class="active">Select Average</option>
-								<option value="Hours">Hours</option>
-								<option value="Day">Day</option>
-								<option value="Month">Month</option>
+								<option value ="<?php echo $u->average; ?>"><?php echo "$u->average"; ?></option>
+								<option value="" class="active">Select Average</option>
+								<option value="Hours"> Hours</option>
+								<option value="Day"> Day</option>
+								<option value="Month"> Month</option>
 							</select>	
 						</div>
 					</div>
@@ -73,7 +76,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Location</label>
-							<input type="text" name="lokasi" value="" class="form-control " required>
+							<input type="text" name="lokasi" value="<?php echo $u->lokasi; ?>" class="form-control " required>
 						</div>
 					</div>
 
@@ -91,16 +94,18 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Description</label>
-							<textarea name="deskripsi" id="" class="form-control texteditor"  cols="30" rows="10" style="resize:none;"></textarea>
+							<textarea name="deskripsi" id="" class="form-control texteditor" cols="30" rows="10" style="resize:none;"><?php echo $u->deskripsi ?></textarea>
 						</div>
 					</div>
 					
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Reqruitments</label>
-							<textarea name="syarat" id="" class="form-control" cols="30" rows="10" style="resize:none;"></textarea>
+							<textarea name="syarat" id="" class="form-control" cols="30" rows="10" style="resize:none;">
+								<?php echo $u->syarat ?></textarea>
 						</div>	
 					</div>
+					<?php } ?>
 					<div class="row">
 						<div class="col-md-12 text-center">
 							 <button type="submit" class="btn btn-hiring theme-btn btn-m mrg-5" >Bagikan Lowongan</button>

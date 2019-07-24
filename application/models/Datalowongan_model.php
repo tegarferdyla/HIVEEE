@@ -135,4 +135,9 @@ class Datalowongan_model extends CI_Model {
 
 			return $query->result_array();
 	}
+		public function updatelowongan ($data_update,$id_lowongan)
+    {
+        $this->db->where('id_lowongan',$id_lowongan);
+        return $this->db->update('lowongan',$data_update);
+    }
 }

@@ -20,6 +20,13 @@
 			<div class="notice notice-danger">
 						<strong>Perhatian!</strong> Harap update profile company anda secara berkala, hal ini akan berpengaruh pada lowongan yang anda buat	.
 					</div>
+		 <?php if ($this->session->flashdata('updateberhasil')):?>
+
+			<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<strong>Well done!</strong> Profile anda berhasil diupdate , profile perusahaan akan di tampilkan pada saat membuat lowongan.
+		</div>
+	<?php endif ?>
 		</div>
 	</div>	
 	<div class="row">	
@@ -106,7 +113,7 @@
 								<div class="col-md-12">
 									<label>Foto / Logo Perusahaan</label>
 									<div class="custom-file-upload">
-										<input type="file" id="file" name="myfiles" />
+										<input type="file" id="file" name="myfiles"/>
 									</div>
 								</div>
 							</div>	

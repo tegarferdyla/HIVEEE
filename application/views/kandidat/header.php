@@ -38,6 +38,9 @@
 
 	<!-- Slick Slider -->
     <link href="<?php echo base_url('assets/plugins/slick-slider/slick.css') ?> " rel="stylesheet">	
+
+    <script src="<?= base_url('assets/plugins/tinymce/tinymce.min.js') ?>"></script>
+  	<script>tinymce.init({ selector:'textarea'});</script>
     
     <!-- Custom style -->
     <link href="<?php echo base_url('assets/css/style.css') ?> " rel="stylesheet">

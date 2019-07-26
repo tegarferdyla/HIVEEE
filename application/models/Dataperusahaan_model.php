@@ -23,6 +23,14 @@ class Dataperusahaan_model extends CI_Model {
     	$query = $this->db->get();
     	return $query->row_array();
     }
+    public function getwhere($id_perusahaan)
+    {
+    	$this->db->select('*');
+    	$this->db->from('perusahaan');
+    	$this->db->where('id_perusahaan',$id_perusahaan);
+    	$query = $this->db->get();
+    	return $query->result_array();
+    }
 	public function profilperusahaan($id_perusahaan){
 			$this->db->select('*');
 			$this->db->from('perusahaan');

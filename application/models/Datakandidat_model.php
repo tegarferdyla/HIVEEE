@@ -191,4 +191,12 @@ class Datakandidat_model extends CI_Model {
 			$query = $this->db->get();
 			return $query->num_rows();
 		}
+		public function getwhere($id_kandidat)
+    {
+    	$this->db->select('*');
+    	$this->db->from('kandidat');
+    	$this->db->where('id_kandidat',$id_kandidat);
+    	$query = $this->db->get();
+    	return $query->result_array();
+    }
 }

@@ -114,7 +114,7 @@
 		'telp' 	 		 	 => $this->input->post('tlppt'),
 		'username' 	 		 => $user,
 		'password'		 	 => md5($pass),
-		'logo'=>"default.png"
+		'logo'=>"company.png"
 		);
 		$resultcheckemail   = $this->Daftaruser_model->cekemailkandidat($emailkan);
 		$resultcheckemailpt = $this->Daftaruser_model->cekemailpt($emailkan);

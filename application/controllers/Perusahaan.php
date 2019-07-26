@@ -49,12 +49,29 @@ class Perusahaan extends CI_Controller {
 	}
 	public function manageresume ($id_lowongan) {
 		$data['perusahaan']=$this->Datalowongan_model->daftarperusahaan($id_lowongan);
-		$data['lowongan']=$this->Datalowongan_model->datalowongan($id_lowongan);
+		$data['lowonganlamar']=$this->Datalowongan_model->datalowongan($id_lowongan);
+		$data['lowonganterima']=$this->Datalowongan_model->datalowonganterima($id_lowongan);
+		$data['jmlterima']=$this->Datalowongan_model->datalowonganterimajml($id_lowongan);
+		$data['jml']=$this->Datalowongan_model->datalowonganjml($id_lowongan);
+
+
 		$id_perusahaan=$this->session->userdata('id_perusahaan');
 		//$data['perusahaan']=$this->Dataperusahaan_model->profilperusahaan($id_perusahaan);
 		$this->load->view('perusahaan/header1',$data);
 		$this->load->view('perusahaan/manageresume',$data);
 		$this->load->view('home/footer');
+	}
+	public function cetakdaftarpelamar($id_lowongan)
+	{
+		$data['perusahaan']=$this->Datalowongan_model->daftarperusahaan($id_lowongan);
+		$data['lowonganlamar']=$this->Datalowongan_model->datalowongan($id_lowongan);
+		$this->load->view('perusahaan/cetaklaporanpelamar',$data);
+	}
+	public function cetakdaftarterima($id_lowongan)
+	{
+		$data['perusahaan']=$this->Datalowongan_model->daftarperusahaan($id_lowongan);
+		$data['lowonganlamar']=$this->Datalowongan_model->datalowonganterima($id_lowongan);
+		$this->load->view('perusahaan/cetaklaporanterima',$data);
 	}
 	public function checkdetail ($id_kandidat) {
 		$data['pelamar']=$this->Datakandidat_model->Datapelamar($id_kandidat);
@@ -212,17 +229,20 @@ class Perusahaan extends CI_Controller {
         // load library upload
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('myfiles')) {
-            $error = $this->upload->display_errors();
-            // menampilkan pesan error
-            print_r($error);
-        } else {
-       	  $result = $this->upload->data();   
+	         $id_perusahaan=$this->session->userdata('id_perusahaan');
+	     	$perusahaan=$this->Dataperusahaan_model->getwhere($id_perusahaan);
+	     	$logo 	= $perusahaan[0]['logo'];
+        } 
+        else {
+       	 $result = $this->upload->data(); 
+       	 $logo =  $result['file_name'];
+        }
 	      $data = array(
-	      'logo' => $result['file_name'],
+	      'logo' => $logo,
 	      'nm_perusahaan' => $this->input->post('nama'),
 	      'email' => $this->input->post('email'),
 	      'website' => $this->input->post('website'),
-	      'telp' => $this->input->post('telp'),
+	      'telp' => $this->input->post('tlp'),
 	      'alamat_perusahaan' => $this->input->post('alamat'),
 	      'deskripsi_perusahaan' => $this->input->post('des')
 	  
@@ -231,8 +251,8 @@ class Perusahaan extends CI_Controller {
 	      	'id_perusahaan'=>$this->session->userdata('id_perusahaan'));
     
    		 $this->Dataperusahaan_model->ubahprofile($data,$where);
-   		 redirect(base_url('Perusahaan'));
-        }
+   		 $this->session->set_flashdata('updateberhasil','true');
+				redirect('perusahaan/editcompany');
 	}
 
 	public function updatelowongan()
@@ -273,12 +293,20 @@ class Perusahaan extends CI_Controller {
 				redirect('perusahaan/manage');
 			}
 	}
-	public function test()
-	{
-		$average	=$_POST['average'];
-		$kategori	=$_POST['kategori'];
+	public function nonaktifkanlowongan($id_lowongan){
+			$matikanlowongan	= $this->Datalowongan_model->nonaktifkanlowongan($id_lowongan);
 
-		echo "$average";
+			$this->session->set_flashdata('lowongannonaktif','true');
+			redirect('perusahaan/manage');	
 	}
+	public function test() 
+	{
+	     	$id_perusahaan=$this->session->userdata('id_perusahaan');
+	     	$perusahaan=$this->Dataperusahaan_model->getwhere($id_perusahaan);
+	     	$logo 	= $perusahaan[0]['logo'];
+	     	echo $logo ;
+		
+	}
+	
 }
 ?>

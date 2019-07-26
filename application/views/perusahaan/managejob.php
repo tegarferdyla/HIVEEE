@@ -39,6 +39,15 @@
 		</div>
 	</div>
 	</div>
+	<?php elseif ($this->session->flashdata('lowongannonaktif')) : ?>
+		<div class="row">
+	<div class="col-md-12">
+		<div class="alert alert-danger alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<strong>Well done!</strong> Lowongan anda berhasil di nonaktifkan.
+		</div>
+	</div>
+	</div>
 	<?php endif ?>
 	<div class="col-md-12 dol-md-12">
 		<div class="tab style-1" role="tabpanel">
@@ -56,7 +65,7 @@
 									
 										<div class="avatar box-80">
 											<a href="#">
-												<img class="img-responsive" src="<?php echo base_url('assets/img/company.png') ?>" alt="">
+												<img class="img-responsive" src="<?php echo base_url('assets/img/'.$l->logo) ?>" alt="">
 											</a>
 										</div>
 										<h5><a href="#"><?php echo $l->nama_lowongan; ?></a></h5>
@@ -75,7 +84,7 @@
 									<a href="<?php echo base_url("perusahaan/editlowongan/$l->id_lowongan") ?>" class="cl-success mrg-5"><i class="fa fa-edit"></i> Edit Jobs</span></a>
 									</div>
 									<div class="col-md-6">
-									<a href="#" class="cl-danger mrg-5"><i class="fa fa-trash "></i> Non-Aktif Jobs</span></a>
+									<a href="<?=site_url("perusahaan/nonaktifkanlowongan/$l->id_lowongan")?>" class="cl-danger mrg-5"><i class="fa fa-trash "></i> Non-Aktif Jobs</span></a>
 									</div>
 									</div>
 								</div>
@@ -94,7 +103,7 @@
 									<div class="u-content">
 										<div class="avatar box-80">
 											<a href="#">
-												<img class="img-responsive" src="<?php echo base_url('assets/img/company.png') ?>" alt="">
+												<img class="img-responsive" src="<?php echo base_url('assets/img/'.$l->logo) ?>" alt="">
 											</a>
 										</div>
 										<h5><a href="#"><?php echo $x->nama_lowongan; ?></a></h5>
@@ -103,9 +112,9 @@
 											<?php echo $x->lokasi; ?></p>
 										<p class="text-muted" style="color:green"><span class="ti-money"></span><?php echo $x->gaji; ?> / <?php echo $x->average; ?> </p>
 									</div>
-									<div class="job-type-grid">
+									<!-- <div class="job-type-grid">
 										<a href="<?php echo base_url("perusahaan/manageresume/$x->id_lowongan") ?>" class="btn theme-btn">Manage Resume<span class="ti-angle-right"></span></a>
-									</div>	
+									</div> -->	
 
 								</div>
 								

@@ -85,9 +85,46 @@ class Datalowongan_model extends CI_Model {
 		//$this->db->join('perusahaan','perusahaan.id_perusahaan=lamaran.id_perusahaan');
 		$this->db->join('lowongan','lowongan.id_lowongan=lamaran.id_lowongan');
 		$this->db->join('kandidat','kandidat.id_kandidat=lamaran.id_kandidat');
+		$this->db->where('lamaran.status','Direview');
 		$this->db->where('lowongan.id_lowongan',$id_lowongan);
 		$query = $this->db->get();
 		return $query->result();
+	}
+	public function datalowonganjml($id_lowongan)
+	{
+		$this->db->select('*');
+		$this->db->from('lamaran');
+		//$this->db->join('perusahaan','perusahaan.id_perusahaan=lamaran.id_perusahaan');
+		$this->db->join('lowongan','lowongan.id_lowongan=lamaran.id_lowongan');
+		$this->db->join('kandidat','kandidat.id_kandidat=lamaran.id_kandidat');
+		$this->db->where('lamaran.status','Direview');
+		$this->db->where('lowongan.id_lowongan',$id_lowongan);
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	public function datalowonganterima($id_lowongan)
+	{
+		$this->db->select('*');
+		$this->db->from('lamaran');
+		//$this->db->join('perusahaan','perusahaan.id_perusahaan=lamaran.id_perusahaan');
+		$this->db->join('lowongan','lowongan.id_lowongan=lamaran.id_lowongan');
+		$this->db->join('kandidat','kandidat.id_kandidat=lamaran.id_kandidat');
+		$this->db->where('lamaran.status','Diterima');
+		$this->db->where('lowongan.id_lowongan',$id_lowongan);
+		$query = $this->db->get();
+		return $query->result();
+	}
+	public function datalowonganterimajml($id_lowongan)
+	{
+		$this->db->select('*');
+		$this->db->from('lamaran');
+		//$this->db->join('perusahaan','perusahaan.id_perusahaan=lamaran.id_perusahaan');
+		$this->db->join('lowongan','lowongan.id_lowongan=lamaran.id_lowongan');
+		$this->db->join('kandidat','kandidat.id_kandidat=lamaran.id_kandidat');
+		$this->db->where('lamaran.status','Diterima');
+		$this->db->where('lowongan.id_lowongan',$id_lowongan);
+		$query = $this->db->get();
+		return $query->num_rows();
 	}
 	public function daftarperusahaan($id_lowongan)
 	{

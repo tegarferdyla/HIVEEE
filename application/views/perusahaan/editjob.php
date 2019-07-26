@@ -22,7 +22,7 @@
 				<h4 class="warnaorange"><i class="ti-briefcase padd-r-10"></i> Informasi Pekerjaan</h4>
 			</div>
 			<div class="detail-wrapper-body">
-				<form action="<?php echo base_url('Perusahaan/test')?>" method="POST" class="log-form warnaorange" id="defaultForm">
+				<form action="<?php echo base_url('Perusahaan/updatelowongan')?>" method="POST" class="log-form warnaorange" id="defaultForm">
 					<input type="text" name="id_lowongan" value="<?php echo $u->id_lowongan ?>" hidden>
 					<div class="row">
 						<div class="col-md-12">
@@ -34,7 +34,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Category Job</label><br>
-							<select name="kategori" id="" class="wide form-control" required>
+							<select name="kategori" id="" class="wide form-control">
 								<option value ="<?php echo $u->kategori; ?>"><?php echo "$u->kategori"; ?></option>
 								<option value=""class="active">Select Category</option>
 								<option value="Akutansi & Keuangan">Akutansi & Keuangan</option>
@@ -63,7 +63,7 @@
 						</div>
 						<div class="col-md-6">
 							<label for="">/ Hours / Day / Month</label>
-							<select name="average" id="" class="wide form-control" required>
+							<select name="average" id="" class="wide form-control">
 								<option value ="<?php echo $u->average; ?>"><?php echo "$u->average"; ?></option>
 								<option value="" class="active">Select Average</option>
 								<option value="Hours"> Hours</option>
@@ -108,7 +108,7 @@
 					<?php } ?>
 					<div class="row">
 						<div class="col-md-12 text-center">
-							 <button type="submit" class="btn btn-hiring theme-btn btn-m mrg-5" >Bagikan Lowongan</button>
+							 <button type="submit" class="btn btn-hiring theme-btn btn-m mrg-5" >Update Lowongan</button>
 
 						</div>
 					</div>

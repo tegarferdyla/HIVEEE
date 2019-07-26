@@ -29,12 +29,11 @@
 							<input type="text" name="judul" class="form-control" required> 
 						</div>
 					</div>
-
 					<div class="row">
 						<div class="col-md-12">
 							<label for="">Category Job</label><br>
-							<select name="kategori" id="" class="wide form-control" required>
-								<option value=""class="active">Select Category</option>
+							<select name="kategori" id="" class="wide form-control">
+								<option value="" >Select Category</option>
 								<option value="Akutansi & Keuangan">Akutansi & Keuangan</option>
 								<option value="Administrasi">Administrasi</option>
 								<option value="Otomotif">Otomotif</option>
@@ -61,10 +60,10 @@
 						</div>
 						<div class="col-md-6">
 							<label for="">/ Hours / Day / Month</label>
-							<select name="average" id="" class="wide form-control" required>
-								<option value=""class="active">Select Average</option>
-								<option value="Hours">Hours</option>
-								<option value="Day">Day</option>
+							<select name="average" id="" class="wide form-control">
+								<option value="" >Select Average</option>
+								<option value="Hours" >Hours</option>
+								<option value="Day" >Day</option>
 								<option value="Month">Month</option>
 							</select>	
 						</div>

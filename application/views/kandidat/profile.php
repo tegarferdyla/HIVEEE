@@ -20,6 +20,14 @@
 						<strong>Perhatian!</strong> Harap update profile anda secara berkala, hal ini akan berpengaruh pada lamaran anda.
 					</div>
 		</div>
+	<?php if ($this->session->flashdata('updateberhasil')):?>
+		<div class="col-md-12">
+			<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<strong>Well done!</strong> Profile anda berhasil diupdate , profile perusahaan akan di tampilkan pada saat membuat lowongan.
+		</div>
+		</div>
+	<?php endif ?>
 	</div>	
 	<div class="row">	
 	<!-- Side Bar -->
@@ -176,7 +184,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<label>Foto</label>
-									<div class="">
+									<div class="custom-file-upload">
 										<input type="file" id="file" name="myfiles"  />
 									</div>
 								</div>

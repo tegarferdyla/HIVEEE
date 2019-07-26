@@ -92,13 +92,17 @@ class Kandidat extends CI_Controller
         // load library upload
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('myfiles')) {
-            $error = $this->upload->display_errors();
-            // menampilkan pesan error
-            print_r($error);
-        } else {
-       	  $result = $this->upload->data();   
+            $id_kandidat=$this->session->userdata('id_kandidat');
+	     	$kandidat=$this->Datakandidat_model->getwhere($id_kandidat);
+	     	$foto 	= $kandidat[0]['foto'];
+        }
+        else {
+       	   $result = $this->upload->data(); 
+       	   $foto =  $result['file_name'];
+        }
+        $result = $this->upload->data();   
 	      $data = array(
-	      'foto' => $result['file_name'],
+	      'foto' => $foto,
 	      'nama' => $this->input->post('nama'),
 	      'jk' => $this->input->post('gender'),
 	      'tgl_lahir' => date('Y-m-d',strtotime($this->input->post('tgl_lahir'))),
@@ -111,8 +115,8 @@ class Kandidat extends CI_Controller
 	      	'id_kandidat'=>$this->session->userdata('id_kandidat'));
     
    		 $this->Datakandidat_model->ubahprofile($data,$where);
-   		 redirect(base_url('Kandidat/profile'));
-        }
+   		 $this->session->set_flashdata('updateberhasil','true');
+		 redirect('Kandidat/profile');
 	}
 	public function ubahpengalaman()
 	{

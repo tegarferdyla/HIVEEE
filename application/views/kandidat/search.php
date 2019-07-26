@@ -7,7 +7,7 @@
 				<div class="col-md-12 text-center">
 						<h2>Search Job</h2>
 				</div>
-				<div class="col-md-12 search">
+				<!-- <div class="col-md-12 search">
 					<form>
 						<fieldset class="search-form">
 						
@@ -41,7 +41,7 @@
 								
 						</fieldset>
 					</form>
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<!-- ======================= Search Filter ===================== -->
